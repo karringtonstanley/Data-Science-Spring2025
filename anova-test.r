@@ -7,4 +7,10 @@ PATH <- "https://raw.githubusercontent.com/guru99-edu/R-Programming/master/poiso
 #Treatment types are effective against all poison types/there is a signifigant difference between treatment and poison types
 
 #Read the dataset in a variable
-df <- read.csv(PATH) 
+> df <- read.csv(PATH) 
+
+#Understand levels/classes in your datasets
+levels(factor(df$treat))
+
+# OPTIONAL: Plot Data
+> ggplot(df, aes(x = poison, y = time, fill = poison)) + geom_boxplot() + geom_jitter(shape = 15, color = "steelblue", position = position_jitter(0.21)) + theme_classic()
